@@ -1,11 +1,12 @@
 apply plugin: 'eclipse'
 apply plugin: 'groovy'
+apply plugin: 'java' 
 
 version = '1.0'
 
 jar {
 	manifest {
-		attributes 'Title': 'JavaAndGroovy', 'Version': version
+		attributes 'Title': 'Hive-Groovy-App', 'Version': version
 	}
 }
 
@@ -14,9 +15,30 @@ repositories {
 	mavenCentral()
 }
 
-dependencies {
-	compile 'org.codehaus.groovy:groovy-all:2.1.6'
 
-	testCompile 'junit:junit:4.+'
-	testCompile 'org.mockito:mockito-all:1.9.5'
+//Versions
+def hadoop="2.2.0"          //hadoop 
+h_v="0.11.0"            //hive
+//h_v="0.12.0"            //hive
+dn_v="3.2.2"            //datanucleus
+dn_j_v="3.2.1"          //datanucleus
+bcp_v="0.8.0.RELEASE"   //bonecp
+
+dependencies {
+
+    compile 'org.codehaus.groovy:groovy-all:2.1.6'
+
+    //Hive versions
+    compile "org.apache.hadoop:hadoop-client:$hadoop"
+	
+    compile "org.apache.hive:hive-common:$h_v"
+    compile "org.apache.hive:hive-jdbc:$h_v"
+    compile "org.apache.hive:hive-serde:$h_v"
+
+    compile "org.datanucleus:datanucleus-core:$dn_v"
+    compile "org.datanucleus:datanucleus-rdbms:$dn_j_v"
+    compile "org.datanucleus:datanucleus-api-jdo:$dn_j_v"
+    //compile "org.datanucleus:datanucleus-accessplatform-jdo-rdbms:$dn_j_v"
+    testCompile 'junit:junit:4.+'
+    
 }
