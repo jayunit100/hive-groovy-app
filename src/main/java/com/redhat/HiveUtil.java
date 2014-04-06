@@ -87,6 +87,7 @@ public class HiveUtil {
         System.out.println("Connect:  "+ this.con.toString() +"... getting connection timeout=" + DriverManager.getLoginTimeout());
  
         Connection jdbc = DriverManager.getConnection(this.con,"hive","password");
+        
         Properties p = new Properties();
         p.setProperty("host", con);
         //Connection jdbc = new HiveConnection(con,p);
