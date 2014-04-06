@@ -32,4 +32,4 @@ NOTES
 To connect to this instance, I use port forwarding: 
 
 10,000 is the port that hive server runs on:
-ssh -i /Users/Jpeerindex/Development/roofmonkey/CI2/jon.pem root@ec2-54-213-193-118.us-west-2.compute.amazonaws.com -L 9999:localhost:10000
+ssh -i jon.pem root@ec2-54-213-193-118.us-west-2.compute.amazonaws.com -L 9999:localhost:10000
