@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -60,7 +61,7 @@ public class HiveUtil {
     public HiveUtil(String server,String port) throws Exception {
         con=(String.format(
                 //jdbc:hive2://<host>:<port>/<db>?hive.server2.transport.mode=http;hive.server2.thrift.http.path=<http_endpoint>
-                "jdbc:hive2://%s:%s/metastore",
+                "jdbc:hive2://%s:%s/default",
                     server,
                     port
                     ));
@@ -85,7 +86,10 @@ public class HiveUtil {
         try{Class.forName(HIVE_JDBC_DRIVER);
         System.out.println("Connect:  "+ this.con.toString() +"... getting connection timeout=" + DriverManager.getLoginTimeout());
  
-        Connection jdbc = DriverManager.getConnection(this.con,"root","ENTER-THIS_YOURSELF");
+        Connection jdbc = DriverManager.getConnection(this.con,"hive","password");
+        Properties p = new Properties();
+        p.setProperty("host", con);
+        //Connection jdbc = new HiveConnection(con,p);
         
         System.out.println("hive con = " + con.getClass().getName());
         Statement stmt = jdbc.createStatement();
