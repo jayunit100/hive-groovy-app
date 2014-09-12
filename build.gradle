@@ -18,8 +18,8 @@ repositories {
 
 //Versions
 def hadoop="2.2.0"          //hadoop 
-h_v="0.11.0"            //hive
-//h_v="0.12.0"            //hive
+//h_v="0.11.0"            //hive
+h_v="0.12.0"            //hive
 dn_v="3.2.2"            //datanucleus
 dn_j_v="3.2.1"          //datanucleus
 bcp_v="0.8.0.RELEASE"   //bonecp
