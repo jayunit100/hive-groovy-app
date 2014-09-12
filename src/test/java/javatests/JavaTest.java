@@ -8,17 +8,10 @@ import static org.junit.Assert.*;
 import com.redhat.HiveUtil;
 
 public class JavaTest {
-
-	class HiveConnectionTest {
-
-		@Before void beforeTest() {
-	        
-		}
-
-		@Test void testJavaClassNameExample() {
+  
+	@Test 
+	public void testJavaClassNameExample() {
 	        assertEquals("com.redhat.HiveUtil",com.redhat.HiveUtil.class.getName());
-		}
-
 	}
 
 }
