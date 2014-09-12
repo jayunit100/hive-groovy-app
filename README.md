@@ -23,6 +23,8 @@ Edit the Unit test to specify your server credentials,and then off you go.  Just
 1. Run ```gradle build```, jar will now be in the build/ dir.
 1. Run ```gradle eclipse``` to start editing in eclipse.
 
+Now you should be able to edit tests, run them in eclipse (run as -> junit ...).
+
 
 If just using as a java app
 ----------------------------
