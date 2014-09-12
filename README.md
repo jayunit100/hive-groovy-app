@@ -1,6 +1,11 @@
 JavaAndGroovy
 =============
 
+This project can be used as 
+
+- a template for a java / groovy gradle project w/ unit tests.
+- a template for a hive based JDBC app.
+
 Summary
 -------
 
@@ -11,19 +16,22 @@ Not working yet:  But I think this project can be used for anyone wanting to acc
 
 Edit the Unit test to specify your server credentials,and then off you go.  Just run it as a test in eclipseafter  doing the following. For my particular project, the JDBC Connection hangs.  To test:
 
-0) cd to this directory
-1) Download gradle
-2) Run "gradle build"
-
-Then, to hack on it
-
-3) gradle eclipse
-4) Import the project into eclipse.
+1. cd to this directory
+1. Download gradle (```wget https://services.gradle.org/distributions/gradle-2.1-all.zip -O /opt/gradle.zip)```
+1. ```(cd /opt/ && unzip gradle.zip)```
+1. ```alias gradle=/opt/gradle/bin/gradle```
+1. Run ```gradle build```, jar will now be in the build/ dir.
+1. Run ```gradle eclipse``` to start editing in eclipse.
 
 
-SERVER
-------
+If just using as a java app
+----------------------------
 
+Your all set.  Delete the hive dependencies and replace classes as necessary.
+
+
+If running HIVE stuff
+---------------------
 You want to make sure hive server is running.  Other than that, theres not much to it.
 
 
